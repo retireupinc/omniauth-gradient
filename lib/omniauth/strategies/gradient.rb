@@ -6,9 +6,9 @@ module OmniAuth
       option :name, 'gradient'
 
       option :client_options, {
-          site: 'https://api.konnexme.com',
-          authorize_url: 'https://app.konnexme.com/oauth/authorize',
-          token_url: 'https://app.konnexme.com/oauth/token'
+          site: 'https://retireupapialpha.konnexme.com',
+          authorize_url: 'https://loginalpha.konnexme.com/identity/connect/authorize',
+          token_url: 'https://loginalpha.konnexme.com/identity/connect/token'
       }
     end
   end

@@ -30,7 +30,7 @@ module OmniAuth
 
       def raw_info
         # @raw_info ||= access_token.get('/me', ).parsed
-        @raw_info || = {
+        @raw_info ||= {
           UserId: '999999999999',
           EmailAddress: 'rupadvisor@email.com',
           FirstName: 'rup',

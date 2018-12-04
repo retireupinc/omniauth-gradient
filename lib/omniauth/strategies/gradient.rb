@@ -28,7 +28,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/userinfo').parsed
+        @raw_info ||= access_token.get('/clients?searchString=smith', ).parsed
       end
     end
   end

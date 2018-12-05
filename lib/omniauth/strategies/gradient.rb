@@ -11,7 +11,7 @@ module OmniAuth
           token_url: 'https://loginalpha.konnexme.com/identity/connect/token'
       }
 
-      uid{ raw_info['UserId'] }
+      uid { raw_info['UserId'] }
 
       info do
         {
@@ -31,10 +31,10 @@ module OmniAuth
       def raw_info
         # @raw_info ||= access_token.get('/me', ).parsed
         @raw_info ||= {
-          UserId: '999999999999',
-          EmailAddress: 'rupadvisor@email.com',
-          FirstName: 'rup',
-          LastName: 'Advisor'
+          'UserId' => '999999999999',
+          'EmailAddress' => 'RupAdvisor@Email.com',
+          'FirstName' => 'Rup',
+          'LastName' => 'Advisor'
         }
       end
     end

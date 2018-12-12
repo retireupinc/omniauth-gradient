@@ -11,7 +11,7 @@ module OmniAuth
           token_url: 'https://loginalpha.konnexme.com/identity/connect/token'
       }
 
-      uid { raw_info['UserId'] }
+      uid { raw_info['Id'] || raw_info['ID'] }
 
       info do
         {
@@ -29,14 +29,7 @@ module OmniAuth
       end
 
       def raw_info
-        # @raw_info ||= access_token.get('/advisors', ).parsed
-        Rails.logger.error("advisor: #{access_token.get('/advisors', ).parsed.inspect}")
-        @raw_info ||= {
-          'UserId' => '999999999999',
-          'EmailAddress' => 'RupAdvisor@Email.com',
-          'FirstName' => 'Rup',
-          'LastName' => 'Advisor'
-        }
+        @raw_info ||= access_token.get('/advisors', ).parsed
       end
     end
   end

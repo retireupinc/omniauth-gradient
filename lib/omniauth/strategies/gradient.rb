@@ -29,7 +29,8 @@ module OmniAuth
       end
 
       def raw_info
-        # @raw_info ||= access_token.get('/me', ).parsed
+        # @raw_info ||= access_token.get('/advisors', ).parsed
+        Rails.logger.error("advisor: #{access_token.get('/advisors', ).parsed.inspect}")
         @raw_info ||= {
           'UserId' => '999999999999',
           'EmailAddress' => 'RupAdvisor@Email.com',

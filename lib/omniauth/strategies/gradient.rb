@@ -30,6 +30,8 @@ module OmniAuth
 
       def raw_info
         @raw_info ||= access_token.get('/advisors', ).parsed
+        Rails.logger.error("response: #{@raw_info.inspect}")
+        @raw_info
       end
     end
   end

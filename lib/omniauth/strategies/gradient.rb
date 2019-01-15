@@ -24,8 +24,26 @@ module OmniAuth
 
       extra do
         {
-          'raw_info' => raw_info
+          'raw_info' => raw_info.inject({}) do |hash, key|
+            hash[transform_key(key)] = transform_val(raw_info[key])
+            hash
+          end
         }
+      end
+
+      def transform_val(val)
+        case val
+        when Hash
+          val.map { |k, v| [ transform_key(k), transform_val(v) ] }.to_h
+        when Array
+          val.map { |v| [ transform_val(v) ] }
+        else
+          val
+        end
+      end
+
+      def transform_key(key)
+        key.underscore
       end
 
       def raw_info

@@ -5,11 +5,7 @@ module OmniAuth
     class Gradient < OmniAuth::Strategies::OAuth2
       option :name, 'gradient'
 
-      option :client_options, {
-          site: 'https://retireupapialpha.konnexme.com',
-          authorize_url: 'https://loginalpha.konnexme.com/identity/connect/authorize',
-          token_url: 'https://loginalpha.konnexme.com/identity/connect/token'
-      }
+      option :client_options, {}
 
       uid { raw_info['Id'] || raw_info['ID'] }
 
